@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jaylen Schelb - Final - Web 1.0</title>
+    </head>
+    <body>
+        <section id="left"></section>
+            <section id="student-info">
+                <h1>Jaylen Schelb</h1>
+                <p>My favorite color is purple and I wear Nike!</p>
+            </section>
+            <section id="data-input">
+                <h1>Font Styler</h1>
+                <form>
+                    <label for="input-size">Font Size</label>
+                        <input id="input-size" type="number" value="16">
+                    <label for="select-font">Font Family</label>
+                        <select id="select-font">
+                            <option value="helvetica">Helvetica</option>
+                            <option value="arial">Arial</option>
+                            <option value="times">Times New Roman</option>
+                            <option value="georgia">Georgia</option>
+                        </select>
+                    <label for="input-color">Font Color</label>
+                        <input id="input-color" type="color" value="#000">
+                    <label for="input-bg-color">Background Color</label>
+                        <input id="input-bg-color" type="color" value="#fff" placeholder="#fff">
+                    <label for="enter-text">Enter Text</label>
+                        <textarea id="enter-text">Sample Text</textarea>
+                </form>
+            </section>
+        </section>
+        <section id="right">
+            <section id="headline-display">
+                <h1 id="display">Sample Text</h1>
+            </section>
+            <section id="data-output">
+                <h1>Font Settings</h1> 
+                <pre><code>.headline {
+                    font-size: <span id="show-size">16px</span>;
+                    font-family: <span id="show-font">helvetica</span>;
+                    color: <span id="show-color">#000</span>;
+                    background-color: <span id="show-bg-color">#fff</span>;
+                }</code></pre>
+            </section>
+        </section>
+    </body>
+</html>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+<script>
+const inputText = document.querySelector('#enter-text')
+const showText = document.querySelector('#display')
+const inputSize = document.querySelector('#input-size')
+const showSize = document.querySelector('#show-size')
+const inputFont = document.querySelector('#select-font')
+const showFont = document.querySelector('#show-font')
+const inputColor = document.querySelector('#input-color')
+const showColor = document.querySelector('#show-color')
+const inputBgcolor = document.querySelector('#input-bg-color')
+const showBgcolor = document.querySelector('#show-bg-color')
+
+function handleInput() {
+    // Font size
+	const fontSize = inputSize.value + 'px'
+	showText.style.fontSize = fontSize
+	showSize.innerHTML = fontSize
+
+    // Font style
+    const fontStyle = inputFont.value
+    showText.style.fontFamily = fontStyle
+    showFont.innerHTML = fontStyle
+
+    // Font color
+    const fontColor = inputColor.value
+    showText.style.color = fontColor
+    showColor.innerHTML = fontColor
+
+    // Background color
+    const backgroundColor = inputBgcolor.value
+    showText.style.backgroundColor = backgroundColor
+    showBgcolor.innerHTML = backgroundColor
+
+    // Text content
+    const textContent = inputText.value
+    showText.innerHTML = textContent
+}
+
+inputText.addEventListener('input', handleInput)
+inputSize.addEventListener('input', handleInput)
+inputFont.addEventListener('input', handleInput)
+inputColor.addEventListener('input', handleInput)
+inputBgcolor.addEventListener('input', handleInput)
+
+</script>
