@@ -24,7 +24,7 @@
                     <label for="input-color">Font Color</label>
                         <input id="input-color" type="color" value="#000">
                     <label for="input-bg-color">Background Color</label>
-                        <input id="input-bg-color" type="color" value="#fff" placeholder="#fff">
+                        <input id="input-bg-color" type="color" value="#ffffff">
                     <label for="enter-text">Enter Text</label>
                         <textarea id="enter-text">Sample Text</textarea>
                 </form>
@@ -33,7 +33,7 @@
         <section id="right">
             <section id="headline-display">
                 <h1 id="display">Sample Text</h1>
-            </section>
+            </section> 
             <section id="data-output">
                 <h1>Font Settings</h1> 
                 <pre><code>.headline {
@@ -45,13 +45,17 @@
             </section>
         </section>
     </body>
-</html>
-<style>
+</html> 
+<style> /* Why does this not work I have two children, left and right. It does not order them as such 
+            (It appears to order each of the four subsections seperatley, even when they are not the primary children). 
+            Gets even weirder if I try to do #left and #right seperatley.*/
     body {
         display: flex;
-        flex-direction: column;
+        flex-direction: column; 
+        border: solid 2px black;
     }
-</style>
+    
+</style> 
 <script>
 const inputText = document.querySelector('#enter-text')
 const showText = document.querySelector('#display')
